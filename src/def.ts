@@ -13,7 +13,6 @@ export const AppConfig: App = {
     builtin: false,
     version: "0.0.0",
     author: "(your name here)",
-    icon: null,
   },
   size: { w: 600, h: 300 },
   pos: { x: 30, y: 40 },

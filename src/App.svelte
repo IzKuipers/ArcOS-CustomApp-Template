@@ -14,7 +14,16 @@
 
     const loadWindow: WindowLoader = ArcOS.loadWindow;
 
-    // Append the app to the WindowStore
-    await loadWindow(config.id, { ...AppConfig, content: Content });
+    // Append the app to the WindowStore, including inherited properties from app.config.json
+    await loadWindow(config.id, {
+      ...AppConfig,
+      content: Content,
+      info: {
+        ...AppConfig.info,
+        version: config.meta.version,
+        author: config.meta.author,
+        name: config.meta.name,
+      },
+    });
   });
 </script>

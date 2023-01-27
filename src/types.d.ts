@@ -46,14 +46,13 @@ interface OverlayableApp {
 }
 
 interface GeneralAppInfo {
-  name: string;
+  name?: string;
   description: string;
-  builtin: boolean;
-  version: string;
+  builtin: false;
+  version?: string;
   author?: string;
   hidden?: boolean;
   titleSuffix?: string;
-  icon: string;
   custom?: boolean;
 }
 
