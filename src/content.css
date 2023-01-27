@@ -1,0 +1,14 @@
+/*
+
+ArcOS Custom App Style definition file.
+
+You should be able to import CSS files from here without issue.
+
+Note: For app-specific queries, use `window.window#<appid>`
+      (the app id can be found and modified in your config.json file)
+
+*/
+
+window.window#customApp {
+  color: red;
+}

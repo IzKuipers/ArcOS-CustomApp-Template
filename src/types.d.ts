@@ -1,4 +1,11 @@
-type WindowLoader = (id: string, app: App) => boolean;
+/**
+ * ArcOS Type Definition File
+ *
+ * This file contains the types required for this template.
+ *
+ * Written by Izaak Kuipers on January 26th, 2023.
+ */
+type WindowLoader = (id: string, app: App) => void;
 
 interface App {
   info: GeneralAppInfo;
@@ -99,6 +106,19 @@ interface AppEvents {
   leaveFullscreen?(app: App): void;
   keyboardShortcuts?: AppKeyCombinations;
 }
+
+type ExtendedWindow = {
+  __arcos: {
+    loadWindow: (id: string, app: App) => void;
+    loadExternalApp: (info: ExternalAppLoaderContent) => void;
+    windowStore: App[];
+    notifications: NotificationStore;
+    errorStore: ErrorMessage[];
+    username: string;
+    userData: UserData;
+  };
+} & Window &
+  typeof globalThis;
 
 /**
  * sep: Separator

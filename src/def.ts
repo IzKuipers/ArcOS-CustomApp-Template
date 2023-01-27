@@ -1,3 +1,11 @@
+/**
+ * ArcOS Application Definition File
+ *
+ * This file contains the basic definitions for any ArcOS app.
+ *
+ * Written by Izaak Kuipers on January 26th, 2023.
+ */
+
 export const AppConfig: App = {
   info: {
     name: "(app name goes here)",
