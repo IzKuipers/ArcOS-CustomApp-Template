@@ -1,12 +1,3 @@
-/**
- * ArcOS Type Definition File
- *
- * This file contains the types required for this template.
- *
- * Written by Izaak Kuipers on January 26th, 2023.
- */
-type WindowLoader = (id: string, app: App) => void;
-
 interface App {
   info: GeneralAppInfo;
   pos: XY;
@@ -26,6 +17,16 @@ interface App {
   overlays?: { [key: string]: OverlayableApp };
   errorOverlays?: OverlayableError[];
   children?: { [key: string]: App };
+  fileMimes?: string[];
+  openedFile?: ArcFile;
+}
+
+interface ArcFile {
+  name: string;
+  path: string;
+  data: ArrayBuffer;
+  mime: string;
+  anymime?: boolean;
 }
 
 interface OverlayableError {
@@ -46,14 +47,16 @@ interface OverlayableApp {
 }
 
 interface GeneralAppInfo {
-  name?: string;
+  name: string;
   description: string;
-  builtin: false;
-  version?: string;
+  builtin: boolean;
+  version: string;
   author?: string;
   hidden?: boolean;
   titleSuffix?: string;
+  icon: string;
   custom?: boolean;
+  onlineOnly?: boolean;
 }
 
 interface OverlayableAppInfo {
@@ -103,21 +106,9 @@ interface AppEvents {
   minimize?(app: App): void;
   enterFullscreen?(app: App): void;
   leaveFullscreen?(app: App): void;
+  openFile?(app: App): void;
   keyboardShortcuts?: AppKeyCombinations;
 }
-
-type ExtendedWindow = {
-  __arcos: {
-    loadWindow: (id: string, app: App) => void;
-    loadExternalApp: (info: ExternalAppLoaderContent) => void;
-    windowStore: App[];
-    notifications: NotificationStore;
-    errorStore: ErrorMessage[];
-    username: string;
-    userData: UserData;
-  };
-} & Window &
-  typeof globalThis;
 
 /**
  * sep: Separator
