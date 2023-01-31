@@ -8,7 +8,7 @@
     const ArcOS = (window as ExtendedWindow).__arcos;
 
     if (!ArcOS || !ArcOS.loadWindow)
-      console.error(
+      return console.error(
         `App ${AppConfig.info.name} failed to load because the ArcOS hooks could not be found. Is the frontend updated?`
       );
 
