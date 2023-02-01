@@ -85,6 +85,7 @@ const MODULE_OUT = "./dist/module.json";
   }
 
   out.js = out.js.replace(".$$.root", "");
+  out.js = `"use strict"; (() => {${out.js};})()`;
 
   console.log(`STATUS  : Creating ${MODULE_OUT}`);
 

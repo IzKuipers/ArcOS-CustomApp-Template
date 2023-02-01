@@ -9,6 +9,6 @@ Note: For app-specific queries, use `window.window#<appid>`
 
 */
 
-window.window#customApp {
-  color: red;
+window.window#myApp {
+  color: var(--fg);
 }

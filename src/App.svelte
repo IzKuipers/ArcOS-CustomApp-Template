@@ -24,7 +24,7 @@
 
     if (!ArcOS || !ArcOS.loadWindow)
       return console.error(
-        `App ${AppConfig.info.name} failed to load because the ArcOS hooks could not be found. Is the frontend updated?`
+        `App ${config.meta.name} failed to load because the ArcOS hooks could not be found. Is the frontend updated?`
       );
 
     // Get the loadWindow function from __arcos
