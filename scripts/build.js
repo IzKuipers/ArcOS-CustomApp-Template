@@ -1,6 +1,3 @@
-import fs, { writeFile } from "fs/promises";
-import path from "path";
-
 /**
  * ArcOS application module generator
  *
@@ -12,12 +9,18 @@ import path from "path";
  * @var ASSETS_DIR The compiled Svelte Project assets directory
  * @var MODULE_OUT The path to which the application JSON file will be written.
  *
+ * * These options will be called from build.config.json by default *
+ *
  * Written by Izaak Kuipers on January 27th, 2023.
  */
 
-const CONFIGFILE = "./app.config.json";
-const ASSETS_DIR = "./dist/assets";
-const MODULE_OUT = "./dist/module.json";
+import fs, { writeFile } from "fs/promises";
+import path from "path";
+import buildconfig from "../build.config.json" assert { type: "json" };
+
+const CONFIGFILE = buildconfig.configFile;
+const ASSETS_DIR = buildconfig.assetsDir;
+const MODULE_OUT = buildconfig.outFile;
 
 (async () => {
   console.log("\nSTATUS  : Creating app file for ExternalAppLoader");
@@ -59,6 +62,8 @@ const MODULE_OUT = "./dist/module.json";
     `SUCCESS : All properties in ${CONFIGFILE} are valid, proceeding.`
   );
 
+  const target = MODULE_OUT.split("$$ID").join(id);
+
   const out = {
     meta,
     id,
@@ -87,11 +92,11 @@ const MODULE_OUT = "./dist/module.json";
   out.js = out.js.replace(".$$.root", "");
   out.js = `"use strict"; (() => {${out.js};})()`;
 
-  console.log(`STATUS  : Creating ${MODULE_OUT}`);
+  console.log(`STATUS  : Creating ${target}`);
 
-  await writeFile(MODULE_OUT, JSON.stringify(out), {
+  await writeFile(target, JSON.stringify(out), {
     encoding: "utf-8",
   });
 
-  console.log(`SUCCESS : file generated: check ${MODULE_OUT}\n`);
+  console.log(`SUCCESS : file generated: check ${target}\n`);
 })();
