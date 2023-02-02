@@ -1,4 +1,4 @@
-export interface UserData {
+interface UserData {
   sh: {
     taskbar: {
       centered: boolean; //done
@@ -46,10 +46,10 @@ export interface UserData {
   appdata: AppData;
 }
 
-export type AppData = {
+type AppData = {
   [key: string]: ScopedAppData;
 };
 
-export type ScopedAppData = {
+type ScopedAppData = {
   [key: string]: number | boolean | string | object;
 };

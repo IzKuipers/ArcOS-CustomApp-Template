@@ -1,4 +1,4 @@
-export interface NotificationData {
+interface NotificationData {
   title: string;
   message: string;
   icon?: string;
@@ -7,9 +7,9 @@ export interface NotificationData {
   buttons: NotificationButton[];
 }
 
-export interface NotificationButton {
+interface NotificationButton {
   capt: string;
   action: () => void;
 }
 
-export type NotificationStore = { [key: string]: NotificationData };
+type NotificationStore = { [key: string]: NotificationData };

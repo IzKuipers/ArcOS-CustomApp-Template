@@ -1,4 +1,4 @@
-export interface ErrorMessage {
+interface ErrorMessage {
   title: string;
   message: string;
   opened: boolean;
@@ -8,7 +8,7 @@ export interface ErrorMessage {
   parentId?: string;
 }
 
-export interface ErrorButton {
+interface ErrorButton {
   caption: string;
   action: () => void;
 }

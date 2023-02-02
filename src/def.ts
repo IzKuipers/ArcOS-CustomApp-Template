@@ -8,11 +8,8 @@
 
 export const AppConfig: App = {
   info: {
-    name: "(app name goes here)",
     description: "(description goes here)",
     builtin: false,
-    version: "0.0.0",
-    author: "(your name here)",
   },
   size: { w: 600, h: 300 },
   pos: { x: 30, y: 40 },
