@@ -1,5 +1,0 @@
-{
-  "configFile": "./app.config.json",
-  "assetsDir": "./dist/assets",
-  "outFile": "./dist/$$ID.app.json"
-}

@@ -1,8 +1,8 @@
-import App from "./App.svelte";
-import "./content.css";
+import AppSvelte from "./App.svelte";
+import { APP, APP_ELEMENT_TAG } from "./arcos.config";
 
-const app = new App({
-  target: document.getElementById("app"),
-});
+// Load the application into ArcOS
+window.ArcOS.applogic.loadWindow(APP_ELEMENT_TAG, APP);
 
-export default app;
+// Make sure the compiler actually processes the Svelte
+AppSvelte;
