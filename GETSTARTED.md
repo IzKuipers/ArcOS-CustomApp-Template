@@ -17,7 +17,8 @@ This guide will explain how you can create a Sideloaded Application for ArcOS. T
     - [There's no app after I run the file](#theres-no-app-after-i-run-the-file)
 - [_**IMPORTANT**_](#important)
 
-> [!IMPORTANT] > **BEFORE PROCEEDING: READ THE [IMPORTANT INFO](#important)!!**
+> [!IMPORTANT]
+> **BEFORE PROCEEDING: READ THE [IMPORTANT INFO](#important)!!**
 
 ## What you'll need
 
