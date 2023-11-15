@@ -73,3 +73,9 @@ Now it's time for some setup.
   - Check `src/arcos.config.ts` --> `APP_ELEMENT_TAG`
   - Check `src/App.svelte` --> `svelte:options` --> `customElement` --> `tag`
 - If that doesn't work, copy the contents of the `appmod` file and create an issue on this repository with the file contents in a codeblock. I'll look over it and see what is wrong.
+
+# IMPORTANT
+
+- You can only use `gif`, `png`, `jpg` or `svg` assets at the current time.
+- **Don't use external CSS files**. These will be ignored. Use `<style scoped>` tags in Svelte files at all times.
+- It's preferred to use TS for the app using `<script lang="ts">`, though regular JS does work.
