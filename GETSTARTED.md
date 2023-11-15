@@ -5,6 +5,18 @@ This guide will explain how you can create a Sideloaded Application for ArcOS. T
 > [!WARNING]
 > This is currently still highly experimental and manual. A more refined system may arrive in the future.
 
+## Table of contents
+
+- [Getting Started](#getting-started)
+  - [Table of contents](#table-of-contents)
+  - [What you'll need](#what-youll-need)
+  - [Cloning and initial test](#cloning-and-initial-test)
+  - [Setting up](#setting-up)
+  - [Building an `appmod` file](#building-an-appmod-file)
+  - [Troubleshooting](#troubleshooting)
+    - [There's no app after I run the file](#theres-no-app-after-i-run-the-file)
+- [_**IMPORTANT**_](#important)
+
 ## What you'll need
 
 - A compatible ArcOS instance opened and logged in
@@ -74,7 +86,7 @@ Now it's time for some setup.
   - Check `src/App.svelte` --> `svelte:options` --> `customElement` --> `tag`
 - If that doesn't work, copy the contents of the `appmod` file and create an issue on this repository with the file contents in a codeblock. I'll look over it and see what is wrong.
 
-# IMPORTANT
+# _**IMPORTANT**_
 
 - You can only use `gif`, `png`, `jpg` or `svg` assets at the current time.
 - **Don't use external CSS files**. These will be ignored. Use `<style scoped>` tags in Svelte files at all times.
