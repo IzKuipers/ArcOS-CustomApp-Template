@@ -1,6 +1,6 @@
 import svelteIcon from "./assets/svelte.svg";
 
-export const APP_ELEMENT_TAG = "custom-app-template"; // Make sure this matches the tag in App.svelte!
+export const APP_ELEMENT_TAG = "app-id-goes-here"; // Make sure this matches the tag in App.svelte!
 
 export const APP: App = {
   info: {

@@ -39,7 +39,9 @@ export const appmod: () => Plugin = () => {
 
         await fs.writeFile(
           path.resolve(dir, "..", "app.base64"),
-          btoa(await readFile(path.resolve(dir, file), { encoding: "utf-8" }))
+          `data:text/javascript;base64,${btoa(
+            await readFile(path.resolve(dir, file), { encoding: "utf-8" })
+          )}`
         );
 
         await fs.rename(

@@ -1,7 +1,5 @@
 <!-- Change tag to your own ID. -->
-<svelte:options
-  customElement={{ tag: "custom-app-template", shadow: "none" }}
-/>
+<svelte:options customElement={{ tag: "app-id-goes-here", shadow: "none" }} />
 
 <!--
   ! DO NOT MODIFY THIS FILE BEYOND THIS POINT !
