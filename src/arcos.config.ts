@@ -1,15 +1,14 @@
 import svelteIcon from "./assets/svelte.svg";
-import { LogLevel } from "./types/interface";
 
-export const APP_ELEMENT_TAG = "custom-app-template";
+export const APP_ELEMENT_TAG = "custom-app-template"; // Make sure this matches the tag in App.svelte!
 
 export const APP: App = {
   info: {
-    name: "Custom App",
-    description: "CustomAppTemplate",
+    name: "YOUR APP NAME HERE",
+    description: "YOUR APP DESCRIPTION HERE",
     builtin: false,
-    version: "0.0.0",
-    icon: svelteIcon,
+    version: "0.0.0", // x.x.x version
+    icon: svelteIcon, // Import to an image to use as app icon.
   },
   pos: { x: 0, y: 0 },
   minSize: { w: 100, h: 100 },
@@ -27,10 +26,6 @@ export const APP: App = {
   },
   content: null,
   glass: true,
+  // ! LEAVE THIS VALUE AS TRUE !
   sideloaded: true,
-  events: {
-    open() {
-      window.ArcOS.arcConsole.Log("CustomAppTemplate", "Yes.", LogLevel.warn);
-    },
-  },
 };
